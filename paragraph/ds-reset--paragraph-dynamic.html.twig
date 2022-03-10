@@ -1,0 +1,22 @@
+{% set dynamicMark = content.field_dynamic.0["#plain_text"] %}
+{% if dynamicMark == "2515" %}
+	<a tabindex="0" data-placement="top" data-container="body" role="button" data-toggle="popover" data-trigger="focus" data-content="новое слово (вариант, форма)" class="source-popover dynamic-mark">
+		<img src="/themes/images/new_word.png" class="dynamic-image">
+	</a>
+{% elseif dynamicMark == "2511" %}
+	<a tabindex="0" data-placement="top" data-container="body" role="button" data-toggle="popover" data-trigger="focus" data-content="новое слово, в XVIII в. вышедшее из употребления" class="source-popover dynamic-mark">
+		<img src="/themes/images/out_of_use_in_18.png" class="dynamic-image">
+	</a>
+{% elseif dynamicMark == "2514" %}
+	<a tabindex="0" data-placement="top" data-container="body" role="button" data-toggle="popover" data-trigger="focus" data-content="слово (вариант, форма), вышедшее из употребления" class="source-popover dynamic-mark">
+		<img src="/themes/images/out_of_use.png" class="dynamic-image">
+	</a>
+{% elseif dynamicMark == "2513" %}
+	<a tabindex="0" data-placement="top" data-container="body" role="button" data-toggle="popover" data-trigger="focus" data-content="слово, выходящее из употребления" class="source-popover dynamic-mark">
+		<img src="/themes/images/out_of_use_process.png" class="dynamic-image">
+	</a>
+{% elseif dynamicMark == "2512" %}
+	<a tabindex="0" data-placement="top" data-container="body" role="button" data-toggle="popover" data-trigger="focus" data-content="слово, расширившее употребление" class="source-popover dynamic-mark">
+		<img src="/themes/images/extended_use.png" class="dynamic-image">
+	</a>
+{% endif %}

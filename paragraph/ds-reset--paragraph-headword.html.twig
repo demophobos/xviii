@@ -1,0 +1,12 @@
+{% if content.field_dynamic_mark | render %}
+    <span>{{content.field_dynamic_mark }}</span>
+{% endif %}
+{% if content.field_later_form.0["#markup"] == "On" %}
+    <span class="field-headword-vocable">&lt;{{content.field_vocable.0}}&gt;</span>
+{% else %}
+    <span class="field-headword-vocable">{{content.field_vocable.0}}</span>
+{% endif %}
+{% if content.field_index.0 %}
+    <span class="field-headword-index"><sup>{{content.field_index.0}}</sup></span>
+{% endif %}
+<span>{{content.field_items}}</span>

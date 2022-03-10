@@ -1,0 +1,50 @@
+{% set node_id = node.id() %}
+
+<span class="field-main-headword">
+	{% for key, value in node.field_main_headword.value %}
+		{{ content.field_main_headword[key] }}
+	{% endfor %}
+</span>
+<span class="field-head-elements">
+	{% for key, value in node.field_head_elements.value %}
+		{{ content.field_head_elements[key] }}
+	{% endfor %}
+</span>
+<span class="field-subheadwords">
+	{% for key, value in node.field_subheadwords.value %}
+		{{ content.field_subheadwords[key] }}
+	{% endfor %}
+</span>
+<span class="field-government">{{content.field_government.0}}</span>
+<span class="field-etymology">
+	{% for key, value in node.field_etymology.value %}
+		{{ content.field_etymology[key] }}
+	{% endfor %}
+</span>
+
+{% set _senses_results = drupal_view_result('_senses', 'block_1', node_id)|length %}
+{% set _idioms_results = drupal_view_result('_idioms', 'block_1', node_id)|length %}
+{% set _derivations_results = drupal_view_result('_derivations', 'block_1', node_id)|length %}
+{% set _references_results = drupal_view_result('_references', 'block_1', node_id)|length %}
+
+{% if _senses_results > 0 %}
+  {{ drupal_view('_senses', 'block_1', node_id) }}
+{% endif %}
+
+{% if _idioms_results > 0 %}
+  {{ drupal_view('_idioms', 'block_1', node_id) }}
+{% endif %}
+
+{% if _derivations_results > 0 %}
+  {{ drupal_view('_derivations', 'block_1', node_id) }}
+{% endif %}
+
+{% if _references_results > 0 %}
+  {{ drupal_view('_references', 'block_1', node_id) }}
+{% endif %}
+
+
+
+
+
+

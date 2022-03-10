@@ -1,0 +1,7 @@
+{% if content.description.0 %}
+	<a tabindex="0" data-html="true" data-placement="right" data-container="body" role="button" data-toggle="popover" data-trigger="focus" data-content='{{content.description.0}}' class="source-popover">
+		<span class="term-mark grammar-mark">{{content.name.0}}</span>
+	</a>
+{% else %}
+	<span class="term-mark grammar-mark">{{content.name.0}}</span>
+{% endif %}
